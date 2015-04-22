@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/r-park/event-signal.svg?branch=master)](https://travis-ci.org/r-park/event-signal)
 # EventSignal
 EventSignal is a lightweight event messaging controller inspired by [js-signals](https://github.com/millermedeiros/js-signals).
 
