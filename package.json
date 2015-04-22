@@ -9,6 +9,10 @@
 
   "main": "./dist/event-signal.js",
 
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start --single-run"
+  },
+
   "devDependencies": {
     "del": "~1.1.1",
     "gulp": "~3.8.11",
