@@ -1,0 +1,40 @@
+{
+  "name": "event-signal",
+
+  "version": "0.1.1",
+
+  "author": "Richard Park",
+
+  "description": "EventSignal is a lightweight event messaging controller",
+
+  "main": "./dist/event-signal.min.js",
+
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+
+  "keywords": [
+    "event",
+    "eventemitter",
+    "messaging",
+    "observer",
+    "pub-sub",
+    "pub/sub",
+    "signals"
+  ],
+
+  "license": "MIT",
+
+  "ignore": [
+    "**/.*",
+    "gulpfile.js",
+    "karma.conf.js",
+    "node_modules",
+    "package.json",
+    "src",
+    "test",
+    "tmp"
+  ]
+}
