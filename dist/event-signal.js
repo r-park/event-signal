@@ -1,4 +1,4 @@
-/* event-signal v0.1.1 - Wed Apr 22 2015 02:41:57 GMT-0400 (EDT) */
+/* event-signal v0.1.3 - Thu Apr 23 2015 03:45:35 GMT-0400 (EDT) */
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define([], factory);
