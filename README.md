@@ -1,13 +1,14 @@
 [![Build Status](https://travis-ci.org/r-park/event-signal.svg?branch=master)](https://travis-ci.org/r-park/event-signal)
+[![Coverage Status](https://coveralls.io/repos/r-park/event-signal/badge.svg)](https://coveralls.io/r/r-park/event-signal)
 # EventSignal
 EventSignal is a lightweight event messaging controller inspired by [js-signals](https://github.com/millermedeiros/js-signals).
 
-## Getting Started
-#### bower
+## Installing
+**bower**
 ```
 bower install event-signal
 ```
-#### npm
+**npm**
 ```
 npm install event-signal
 ```
@@ -103,6 +104,18 @@ are preferred over :
 ##### listenersCount()
 - Returns the number of registered listeners
 
+## Browser Support
+- Chrome 
+- Firefox 
+- IE 9+ 
+- IE 8 with [es5-shim](https://github.com/es-shims/es5-shim)
+- Safari
+
+## Module Support
+- AMD
+- CommonJS
+- Browser global
+
 ## License
-All parts of EventSignal are free to use and abuse under the [open-source MIT license](https://github.com/r-park/event-signal/blob/master/LICENSE.md).
+EventSignal is free to use under the [open-source MIT license](https://github.com/r-park/event-signal/blob/master/LICENSE).
 
