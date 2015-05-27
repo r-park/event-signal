@@ -2,7 +2,7 @@
 # Directories
 #---------------------------------
 **/node_modules/
-src/
+coverage/
 test/
 tmp/
 
