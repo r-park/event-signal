@@ -118,4 +118,3 @@ are preferred over :
 
 ## License
 EventSignal is free to use under the [open-source MIT license](https://github.com/r-park/event-signal/blob/master/LICENSE).
-
