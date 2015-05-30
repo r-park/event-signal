@@ -36,20 +36,6 @@ resource.updated.emit({message: 'foo'});
 resource.updated.removeListener(listener);
 ```
 
-## Naming Conventions
-It's recommended that EventSignal instances be named using the past-tense :
-- foo.created
-- foo.saved
-- foo.updated
-- foo.ended
-
-are preferred over :
-- foo.create
-- foo.onSave
-- foo.afterUpdate
-- foo.ending
-- foo.end
-
 ## Constructor
 ```javascript
 var object = {};
@@ -156,6 +142,20 @@ Returns the number of registered listeners.
 object.saved.listenersCount()
 //-> number
 ```
+
+## Naming Conventions
+It's recommended that EventSignal instances be named using the past-tense :
+- foo.created
+- foo.saved
+- foo.updated
+- foo.ended
+
+are preferred over :
+- foo.create
+- foo.onSave
+- foo.afterUpdate
+- foo.ending
+- foo.end
 
 ## Browser Support
 - Chrome 
