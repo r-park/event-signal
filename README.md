@@ -28,32 +28,12 @@ resource.updated = new EventSignal();
 // add a listener to the `updated` event
 resource.updated.addListener(listener);
 
-// alternatively, use the alias `then` to add a listener
-resource.updated.then(function(data){
-  console.log(data.message);
-});
-
-// optionally pass custom scope object to be
-// keyword `this` within the listener function
-resource.updated.addListener(listener, {});
-
-// optionally passing `true` will automatically
-// remove the listener after one call
-resource.created.addListener(listener, true);
-
-// one-liner to add a listener with custom scope,
-// and remove the listener after one call
-resource.created.addListener(listener, {}, true);
-
 // emit the `updated` event to all listeners,
 // passing an optional `data` object
 resource.updated.emit({message: 'foo'});
 
 // remove the listener from the `updated` event-signal
 resource.updated.removeListener(listener);
-
-// remove all listeners from the `created` event-signal
-resource.created.removeAllListeners();
 ```
 
 ## Naming Conventions
@@ -68,41 +48,114 @@ are preferred over :
 - foo.onSave
 - foo.afterUpdate
 - foo.ending
+- foo.end
 
-## API
-##### addListener(listener)
-- `{Function} listener`
+## Constructor
+```javascript
+var object = {};
+object.saved = new EventSignal();
+```
 
-##### addListener(listener, scope)
-- `{Function} listener`
-- `{Object} scope`
+## addListener(listener)
+Add a `listener` to the event signal instance.
 
-##### addListener(listener, once)
-- `{Function} listener`
-- `{boolean} once`
+Param                    | Type                    |Description
+-------------------------|-------------------------|-------------------------
+listener                 | Function                | The listener function
+```javascript
+object.saved.addListener(function(){});
 
-##### addListener(listener, scope, once)
-- `{Function} listener`
-- `{Object} scope`
-- `{boolean} once`
+// alternatively, use alias `then`
+object.saved.then(function(){});
+```
 
-##### then(listener [, scope] [, once])
-- Alias for `addListener`
+## addListener(listener, scope)
+Add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will execute within an anonymous {} scope.
 
-##### emit(data)
-- `data` is optional
+Param          | Type          | Description             | Default
+---------------|---------------|-------------------------|-------------------------
+listener       | Function      | The listener function   | 
+scope          | Object        | Optional; scope that will be `this` inside the listener function | Anonymous {}
+```javascript
+var scope = {
+  listener: function(){}
+};
 
-##### removeListener(listener)
-- `{Function} listener`
+object.saved.addListener(scope.listener, scope);
+```
 
-##### removeAllListeners()
-- Removes all registered listeners
+## addListener(listener, once)
+Add a `listener` to the event signal instance. Passing an optional `true` for `once` will automatically remove the listener after one call.
 
-##### listeners()
-- Returns an array of registered listeners
+Param          | Type          | Description
+---------------|---------------|--------------------------------------------------
+listener       | Function      | The listener function  
+once           | boolean       | Optional; if `true`, listener will be removed after one call
+```javascript
+object.saved.addListener(function(){}, true);
+```
 
-##### listenersCount()
-- Returns the number of registered listeners
+## addListener(listener, scope, once)
+The trifecta — add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function, and optional `true` for `once` to automatically remove the listener after one call.
+
+Param          | Type          | Description             | Default
+---------------|---------------|-------------------------|-------------------------
+listener       | Function      | The listener function   |
+scope          | Object        | Optional; scope that will be `this` inside the listener function | Anonymous {}
+once           | boolean       | Optional; if `true`, listener will be removed after one call
+```javascript
+var scope = {
+  listener: function(){}
+};
+
+object.saved.addListener(scope.listener, scope, true);
+```
+
+## emit(data)
+Emit the signal to all listeners. Optionally pass `data` to listeners.
+
+Param      | Type    | Description
+-----------|---------|---------------------------------------------------
+data       |    *    | Optional data to be passed to listener
+```javascript
+object.saved.emit();
+
+// examples of passing optional data
+object.saved.emit({status: 'success'});
+object.saved.emit('foo');
+```
+
+## removeListener(listener)
+Removes listener and returns self.
+
+Param                    | Type                    |Description
+-------------------------|-------------------------|-------------------------
+listener                 | Function                | The listener function to be removed
+```javascript
+var listener = function(){};
+object.saved.addListener(listener);
+object.saved.removeListener(listener);
+```
+
+## removeAllListeners()
+Removes all registered listeners and returns self.
+```javascript
+object.saved.removeAllListeners();
+```
+
+## listeners()
+Returns a cloned array of registered listeners.
+```javascript
+object.saved.listeners();
+//-> [{callback:function, scope:Object, once:boolean}]
+```
+
+## listenersCount();
+Returns the number of registered listeners.
+```javascript
+object.saved.listenersCount()
+//-> number
+```
 
 ## Browser Support
 - Chrome 
