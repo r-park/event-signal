@@ -3,6 +3,7 @@
   "version": "0.1.3",
   "description": "EventSignal is a lightweight event messaging controller.",
   "homepage": "https://github.com/r-park/event-signal",
+  "repository": "https://github.com/r-park/event-signal.git",
   "author": "Richard Park",
   "license": "MIT",
 
