@@ -59,9 +59,9 @@ object.saved = new EventSignal();
 ## addListener(listener)
 Add a `listener` to the event signal instance.
 
-Param                    | Type                    |Description
--------------------------|-------------------------|-------------------------
-listener                 | Function                | The listener function
+Param          | Type          |Description
+---------------|---------------|---------------------------------------------------
+listener       | Function      | The listener function
 ```javascript
 object.saved.addListener(function(){});
 
@@ -72,10 +72,10 @@ object.saved.then(function(){});
 ## addListener(listener, scope)
 Add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will execute within an anonymous {} scope.
 
-Param          | Type          | Description             | Default
----------------|---------------|-------------------------|-------------------------
-listener       | Function      | The listener function   | 
-scope          | Object        | Optional; scope that will be `this` inside the listener function | Anonymous {}
+Param          | Type          | Description
+---------------|---------------|---------------------------------------------------
+listener       | Function      | The listener function 
+scope          | Object        | Optional; scope that will be `this` inside the listener function
 ```javascript
 var scope = {
   listener: function(){}
@@ -88,7 +88,7 @@ object.saved.addListener(scope.listener, scope);
 Add a `listener` to the event signal instance. Passing an optional `true` for `once` will automatically remove the listener after one call.
 
 Param          | Type          | Description
----------------|---------------|--------------------------------------------------
+---------------|---------------|---------------------------------------------------
 listener       | Function      | The listener function  
 once           | boolean       | Optional; if `true`, listener will be removed after one call
 ```javascript
@@ -98,10 +98,10 @@ object.saved.addListener(function(){}, true);
 ## addListener(listener, scope, once)
 The trifecta — add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function, and optional `true` for `once` to automatically remove the listener after one call.
 
-Param          | Type          | Description             | Default
----------------|---------------|-------------------------|-------------------------
-listener       | Function      | The listener function   |
-scope          | Object        | Optional; scope that will be `this` inside the listener function | Anonymous {}
+Param          | Type          | Description
+---------------|---------------|---------------------------------------------------
+listener       | Function      | The listener function
+scope          | Object        | Optional; scope that will be `this` inside the listener function
 once           | boolean       | Optional; if `true`, listener will be removed after one call
 ```javascript
 var scope = {
@@ -114,9 +114,9 @@ object.saved.addListener(scope.listener, scope, true);
 ## emit(data)
 Emit the signal to all listeners. Optionally pass `data` to listeners.
 
-Param      | Type    | Description
------------|---------|---------------------------------------------------
-data       |    *    | Optional data to be passed to listener
+Param          | Type          | Description
+---------------|---------------|---------------------------------------------------
+data           |    *          | Optional data to be passed to listener
 ```javascript
 object.saved.emit();
 
@@ -128,9 +128,9 @@ object.saved.emit('foo');
 ## removeListener(listener)
 Removes listener and returns self.
 
-Param                    | Type                    |Description
--------------------------|-------------------------|-------------------------
-listener                 | Function                | The listener function to be removed
+Param          | Type          |Description
+---------------|---------------|---------------------------------------------------
+listener       | Function      | The listener function to be removed
 ```javascript
 var listener = function(){};
 object.saved.addListener(listener);
