@@ -1,19 +1,16 @@
 {
   "name": "event-signal",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "EventSignal is a lightweight event messaging controller.",
   "homepage": "https://github.com/r-park/event-signal",
   "repository": "https://github.com/r-park/event-signal.git",
   "author": "Richard Park",
   "license": "MIT",
-
   "main": "./dist/event-signal.js",
-
   "scripts": {
     "test": "./node_modules/karma/bin/karma start --single-run --coverage",
     "coveralls": "gulp coveralls && rm -rf ./coverage"
   },
-
   "devDependencies": {
     "del": "^1.2.0",
     "gulp": "gulpjs/gulp.git#4.0",
@@ -35,7 +32,6 @@
     "karma-jasmine": "^0.3.5",
     "karma-safari-launcher": "^0.1.1"
   },
-
   "keywords": [
     "events",
     "eventemitter",
