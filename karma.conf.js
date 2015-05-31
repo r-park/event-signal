@@ -1,6 +1,3 @@
-var util = require('gulp-util');
-
-
 module.exports = function(config) {
 
   var options = {
@@ -64,7 +61,7 @@ module.exports = function(config) {
 
 
   // additional options for coverage
-  if (util.env.coverage) {
+  if (process.argv.indexOf('--coverage') !== -1) {
     options.preprocessors['src/*.js'] = 'coverage';
     options.reporters.push('coverage');
     options.coverageReporter = {
