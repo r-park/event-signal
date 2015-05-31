@@ -43,7 +43,7 @@ object.saved = new EventSignal();
 ```
 
 ## addListener(listener)
-Add a `listener` to the event signal instance.
+Add a `listener` to the event signal instance. Returns self.
 
 Param          | Type          |Description
 ---------------|---------------|---------------------------------------------------
@@ -56,7 +56,7 @@ object.saved.then(function(){});
 ```
 
 ## addListener(listener, scope)
-Add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will execute within an anonymous {} scope.
+Add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will execute within an anonymous {} scope. Returns self.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -71,7 +71,7 @@ object.saved.addListener(scope.listener, scope);
 ```
 
 ## addListener(listener, once)
-Add a `listener` to the event signal instance. Passing an optional `true` for `once` will automatically remove the listener after one call.
+Add a `listener` to the event signal instance. Passing an optional `true` for `once` will automatically remove the listener after one call. Returns self.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -82,7 +82,7 @@ object.saved.addListener(function(){}, true);
 ```
 
 ## addListener(listener, scope, once)
-The trifecta — add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function, and optional `true` for `once` to automatically remove the listener after one call.
+The trifecta — add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function, and optional `true` for `once` to automatically remove the listener after one call. Returns self.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -98,7 +98,7 @@ object.saved.addListener(scope.listener, scope, true);
 ```
 
 ## emit(data)
-Emit the signal to all listeners. Optionally pass `data` to listeners.
+Emit the signal to all listeners. Optionally pass `data` to listeners. Returns self.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -112,7 +112,7 @@ object.saved.emit('foo');
 ```
 
 ## removeListener(listener)
-Removes listener and returns self.
+Removes listener and returns self. Returns self.
 
 Param          | Type          |Description
 ---------------|---------------|---------------------------------------------------
@@ -124,7 +124,7 @@ object.saved.removeListener(listener);
 ```
 
 ## removeAllListeners()
-Removes all registered listeners and returns self.
+Removes all registered listeners and returns self. Returns self.
 ```javascript
 object.saved.removeAllListeners();
 ```
@@ -136,10 +136,10 @@ object.saved.listeners();
 //-> [{callback:function, scope:Object, once:boolean}]
 ```
 
-## listenersCount();
+## listenerCount();
 Returns the number of registered listeners.
 ```javascript
-object.saved.listenersCount()
+object.saved.listenerCount()
 //-> number
 ```
 
