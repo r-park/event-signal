@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/r-park/event-signal.svg?branch=master)](https://travis-ci.org/r-park/event-signal)
-[![Coverage Status](https://coveralls.io/repos/r-park/event-signal/badge.svg)](https://coveralls.io/r/r-park/event-signal)
+[![Coverage Status](https://coveralls.io/repos/r-park/event-signal/badge.svg?branch=master)](https://coveralls.io/r/r-park/event-signal?branch=master)
+
 # EventSignal
 EventSignal is a lightweight event messaging controller inspired by [js-signals](https://github.com/millermedeiros/js-signals).
 
