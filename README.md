@@ -5,11 +5,11 @@ EventSignal is a lightweight event messaging controller inspired by [js-signals]
 
 ## Installing
 **bower**
-```
+```bash
 bower install event-signal
 ```
 **npm**
-```
+```bash
 npm install event-signal
 ```
 
@@ -43,7 +43,9 @@ object.saved = new EventSignal();
 ```
 
 ## addListener(listener)
-Add a `listener` to the event signal instance. Returns self.
+Add a `listener` to the event signal instance. 
+
+Returns the `EventSignal`.
 
 Param          | Type          |Description
 ---------------|---------------|---------------------------------------------------
@@ -56,7 +58,9 @@ object.saved.then(function(){});
 ```
 
 ## addListener(listener, scope)
-Add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will execute within an anonymous {} scope. Returns self.
+Add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will execute within an anonymous {} scope.
+
+Returns the `EventSignal`.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -71,7 +75,9 @@ object.saved.addListener(scope.listener, scope);
 ```
 
 ## addListener(listener, once)
-Add a `listener` to the event signal instance. Passing an optional `true` for `once` will automatically remove the listener after one call. Returns self.
+Add a `listener` to the event signal instance. Passing an optional `true` for `once` will automatically remove the listener after one call.
+
+Returns the `EventSignal`.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -82,7 +88,9 @@ object.saved.addListener(function(){}, true);
 ```
 
 ## addListener(listener, scope, once)
-The trifecta — add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function, and optional `true` for `once` to automatically remove the listener after one call. Returns self.
+The trifecta — add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function, and optional `true` for `once` to automatically remove the listener after one call.
+
+Returns the `EventSignal`.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -98,7 +106,9 @@ object.saved.addListener(scope.listener, scope, true);
 ```
 
 ## emit(data)
-Emit the signal to all listeners. Optionally pass `data` to listeners. Returns self.
+Emit the signal to all listeners. Optionally pass `data` to listeners.
+
+Returns the `EventSignal`.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -112,7 +122,9 @@ object.saved.emit('foo');
 ```
 
 ## removeListener(listener)
-Removes listener and returns self. Returns self.
+Removes listener and returns self.
+
+Returns the `EventSignal`.
 
 Param          | Type          |Description
 ---------------|---------------|---------------------------------------------------
@@ -124,7 +136,10 @@ object.saved.removeListener(listener);
 ```
 
 ## removeAllListeners()
-Removes all registered listeners and returns self. Returns self.
+Removes all registered listeners and returns self.
+
+Returns the `EventSignal`.
+
 ```javascript
 object.saved.removeAllListeners();
 ```
