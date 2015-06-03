@@ -1,4 +1,4 @@
-/* event-signal v0.1.4 - 2015-05-30T05:01:33.153Z - https://github.com/r-park/event-signal */
+/* event-signal v0.1.5 - 2015-06-03T08:53:48.113Z - https://github.com/r-park/event-signal */
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define([], factory);
