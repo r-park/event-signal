@@ -32,9 +32,13 @@
     "karma-safari-launcher": "^0.1.1"
   },
   "keywords": [
-    "events",
-    "eventemitter",
+    "emitter",
+    "event-dispatcher",
+    "eventdispatcher",
+    "event-emitter",
     "event-signal",
+    "eventemitter",
+    "events",
     "eventsignal",
     "messaging",
     "observer",
