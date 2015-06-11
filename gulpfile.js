@@ -57,7 +57,7 @@ gulp.task('lint', function(){
 });
 
 
-gulp.task('process', function(){
+gulp.task('umd', function(){
   var umdHelper = function(){ return 'EventSignal'; };
 
   return gulp.src('./src/event-signal.js')
@@ -83,7 +83,7 @@ gulp.task('uglify', function(){
 });
 
 
-gulp.task('build', gulp.series('lint', 'test', 'clean', 'process', 'uglify', 'header'));
+gulp.task('build', gulp.series('lint', 'test', 'clean', 'umd', 'uglify', 'header'));
 
 gulp.task('dist:patch', gulp.series('bump', 'build'));
 

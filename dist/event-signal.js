@@ -1,4 +1,4 @@
-/* event-signal v0.1.5 - 2015-06-03T08:53:48.113Z - https://github.com/r-park/event-signal */
+/* event-signal v0.1.6 - 2015-06-11T04:46:44.138Z - https://github.com/r-park/event-signal */
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define([], factory);
@@ -46,7 +46,7 @@ EventSignal.prototype = {
 
     var listener = {callback: listenerFn};
 
-    if (typeof scope === 'boolean') {
+    if (scope === true) {
       listener.scope = {};
       listener.once = scope;
     }
@@ -66,16 +66,19 @@ EventSignal.prototype = {
    * @returns {EventSignal}
    */
   emit : function(data) {
-    var listeners = this._listeners.slice(),
-        count = listeners.length,
-        listener;
+    var count = this._listeners.length;
 
-    for (var i = 0; i < count; i++) {
-      listener = listeners[i];
-      listener.callback.call(listener.scope, data);
+    if (count) {
+      var listeners = this._listeners.slice(),
+          listener;
 
-      if (listener.once) {
-        this.removeListener(listener.callback);
+      for (var i = 0; i < count; i++) {
+        listener = listeners[i];
+        listener.callback.call(listener.scope, data);
+
+        if (listener.once) {
+          this.removeListener(listener.callback);
+        }
       }
     }
 

@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/r-park/event-signal/badge.svg?branch=master)](https://coveralls.io/r/r-park/event-signal?branch=master)
 
 # EventSignal
-EventSignal is a lightweight event messaging controller inspired by [js-signals](https://github.com/millermedeiros/js-signals).
+EventSignal is a lightweight, browser-safe event messaging controller inspired by [js-signals](https://github.com/millermedeiros/js-signals).
 
 ## Installing
 **bower**
@@ -40,13 +40,18 @@ resource.updated.removeListener(listener);
 ## Constructor
 ```javascript
 var object = {};
-object.saved = new EventSignal();
+object.updated = new EventSignal();
+
+function MyClass() {
+  this.updated = new EventSignal();
+}
 ```
 
 ## addListener(listener)
-Add a `listener` to the event signal instance. 
+Add a `listener` to the event signal instance.
 
 Returns the `EventSignal`.
+Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          |Description
 ---------------|---------------|---------------------------------------------------
@@ -59,9 +64,10 @@ object.saved.then(function(){});
 ```
 
 ## addListener(listener, scope)
-Add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will execute within an anonymous {} scope.
+Add a `listener` to the event signal instance, passing a `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will use an anonymous `{}` for `scope`.
 
 Returns the `EventSignal`.
+Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -76,9 +82,10 @@ object.saved.addListener(scope.listener, scope);
 ```
 
 ## addListener(listener, once)
-Add a `listener` to the event signal instance. Passing an optional `true` for `once` will automatically remove the listener after one call.
+Add a `listener` to the event signal instance. Passing `true` for `once` will automatically remove the listener after one call.
 
 Returns the `EventSignal`.
+Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -89,9 +96,10 @@ object.saved.addListener(function(){}, true);
 ```
 
 ## addListener(listener, scope, once)
-The trifecta — add a `listener` to the event signal instance, passing an optional `scope` object that will be `this` from inside the listener function, and optional `true` for `once` to automatically remove the listener after one call.
+The trifecta — add a `listener` to the event signal instance, passing a `scope` object that will be `this` from inside the listener function, and boolean `true` for `once` to automatically remove the listener after one call.
 
 Returns the `EventSignal`.
+Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
@@ -123,7 +131,7 @@ object.saved.emit('foo');
 ```
 
 ## removeListener(listener)
-Removes listener and returns self.
+Removes the provided `listener` function.
 
 Returns the `EventSignal`.
 
@@ -137,7 +145,7 @@ object.saved.removeListener(listener);
 ```
 
 ## removeAllListeners()
-Removes all registered listeners and returns self.
+Removes all registered listeners.
 
 Returns the `EventSignal`.
 

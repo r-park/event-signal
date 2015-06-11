@@ -1,7 +1,7 @@
 {
   "name": "event-signal",
-  "version": "0.1.5",
-  "description": "EventSignal is a lightweight event messaging controller.",
+  "version": "0.1.6",
+  "description": "EventSignal is a lightweight, browser-safe event messaging controller.",
   "homepage": "https://github.com/r-park/event-signal",
   "repository": "https://github.com/r-park/event-signal.git",
   "author": "Richard Park",
