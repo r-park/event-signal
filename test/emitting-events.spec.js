@@ -8,6 +8,16 @@ describe("Emitting events", function(){
   });
 
 
+  it("should return self", function(){
+    expect(eventSignal.emit()).toBe(eventSignal);
+
+    eventSignal.addListener(function(){});
+    eventSignal.emit();
+
+    expect(eventSignal.emit()).toBe(eventSignal);
+  });
+
+
   it("should invoke listeners in FIFO order", function(){
     var result = '';
     var listener1 = function() { result += '1'; };

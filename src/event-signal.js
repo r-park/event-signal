@@ -56,16 +56,19 @@ EventSignal.prototype = {
    * @returns {EventSignal}
    */
   emit : function(data) {
-    var listeners = this._listeners.slice(),
-        count = listeners.length,
-        listener;
+    var count = this._listeners.length;
 
-    for (var i = 0; i < count; i++) {
-      listener = listeners[i];
-      listener.callback.call(listener.scope, data);
+    if (count) {
+      var listeners = this._listeners.slice(),
+          listener;
 
-      if (listener.once) {
-        this.removeListener(listener.callback);
+      for (var i = 0; i < count; i++) {
+        listener = listeners[i];
+        listener.callback.call(listener.scope, data);
+
+        if (listener.once) {
+          this.removeListener(listener.callback);
+        }
       }
     }
 
