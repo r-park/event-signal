@@ -51,6 +51,7 @@ function MyClass() {
 Add a `listener` to the event signal instance.
 
 Returns the `EventSignal`.
+
 Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          |Description
@@ -64,9 +65,10 @@ object.saved.then(function(){});
 ```
 
 ## addListener(listener, scope)
-Add a `listener` to the event signal instance, passing a `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will use an anonymous `{}` for `scope`.
+Add a `listener` to the event signal instance, passing a `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will be called using an anonymous `{}` for `scope`.
 
 Returns the `EventSignal`.
+
 Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          | Description
@@ -85,6 +87,7 @@ object.saved.addListener(scope.listener, scope);
 Add a `listener` to the event signal instance. Passing `true` for `once` will automatically remove the listener after one call.
 
 Returns the `EventSignal`.
+
 Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          | Description
@@ -99,6 +102,7 @@ object.saved.addListener(function(){}, true);
 The trifecta — add a `listener` to the event signal instance, passing a `scope` object that will be `this` from inside the listener function, and boolean `true` for `once` to automatically remove the listener after one call.
 
 Returns the `EventSignal`.
+
 Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          | Description
