@@ -36,7 +36,7 @@ EventSignal.prototype = {
 
     var listener = {callback: listenerFn};
 
-    if (typeof scope === 'boolean') {
+    if (scope === true) {
       listener.scope = {};
       listener.once = scope;
     }
