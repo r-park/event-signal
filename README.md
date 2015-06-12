@@ -2,7 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/r-park/event-signal/badge.svg?branch=master)](https://coveralls.io/r/r-park/event-signal?branch=master)
 
 # EventSignal
-EventSignal is a lightweight, browser-safe event messaging controller inspired by [js-signals](https://github.com/millermedeiros/js-signals).
+EventSignal is a lightweight, browser-safe event messaging controller.
 
 ## Installing
 **bower**
@@ -65,7 +65,7 @@ object.saved.then(function(){});
 ```
 
 ## addListener(listener, scope)
-Add a `listener` to the event signal instance, passing a `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will be called using an anonymous `{}` for `scope`.
+Add a `listener` to the event signal instance, passing a `scope` object that will be `this` from inside the listener function. If `scope` is not provided, `listener` will be called using an anonymous `{}` as `scope`.
 
 Returns the `EventSignal`.
 
