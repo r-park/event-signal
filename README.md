@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/event-signal.svg)](http://badge.fury.io/js/event-signal)
 [![Build Status](https://travis-ci.org/r-park/event-signal.svg?branch=master)](https://travis-ci.org/r-park/event-signal)
 [![Coverage Status](https://coveralls.io/repos/r-park/event-signal/badge.svg?branch=master)](https://coveralls.io/r/r-park/event-signal?branch=master)
 
