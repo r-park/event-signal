@@ -54,20 +54,27 @@ module.exports = function(config) {
     singleRun: false,
 
 
-    // custom launcher for travis-ci
-    customLaunchers: {
-      TRAVIS_CHROME: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
-
-
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: process.env.TRAVIS ? ['TRAVIS_CHROME'] : ['Chrome']
+    browsers: ['Chrome']
 
   };
+
+
+  // additional configuration for sauce-labs
+  if (process.env.TRAVIS) {
+    var sauceConfig = require('./sauce.conf');
+    options.browsers = Object.keys(sauceConfig.customLaunchers);
+    options.captureTimeout = 180000;
+    options.customLaunchers = sauceConfig.customLaunchers;
+    options.sauceLabs = {
+      build: 'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')',
+      startConnect: true,
+      recordScreenshots: false,
+      testName: 'event-signal',
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+    };
+  }
 
 
   // additional options for coverage

@@ -2,10 +2,10 @@ language: node_js
 
 node_js: 0.12
 
-before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+env:
+  global:
+    - secure: AyQ0abZa7PqB2PLZ7CBScD8RxMdU6mcYd8+0hOShK1QMzw4XwuSmc/3hSKXXuKqgIK5bDXIgtSn/h26MZx6qgmWorfkOc3tfc9ngtiGZqMm/5V3gx54cbk2fGy4BScz0etfLM8GbQrad+EPLvPFRPLq3zwBVvx2uyPgYIVJLBhk=
+    - secure: cwxsyqvgIgcOvGAKRTvQn5Ki8G0RKp6PvcQwwr8mwRGpfKPQSRlGY0FdRiJKM3XH/u2LIMdv8a5KGq6zBaHGsh5uS0S8053nOrC2W+jJCLH3+SRDop6a4yv7MS6ZzOBbwWsmrbJ5zHN8PbssyslFC/dJuZ6uEIFRM4Jo+dqZ+Q4=
 
 install:
   - npm install
