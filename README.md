@@ -1,6 +1,7 @@
-[![npm version](https://badge.fury.io/js/event-signal.svg)](http://badge.fury.io/js/event-signal)
 [![Build Status](https://travis-ci.org/r-park/event-signal.svg?branch=master)](https://travis-ci.org/r-park/event-signal)
 [![Coverage Status](https://coveralls.io/repos/r-park/event-signal/badge.svg?branch=master)](https://coveralls.io/r/r-park/event-signal?branch=master)
+[![npm version](https://badge.fury.io/js/event-signal.svg)](http://badge.fury.io/js/event-signal)
+[![Bower version](https://badge.fury.io/bo/event-signal.svg)](http://badge.fury.io/bo/event-signal)
 
 # EventSignal
 EventSignal is a lightweight, browser-safe event messaging controller.
@@ -74,7 +75,7 @@ Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
-listener       | Function      | The listener function 
+listener       | Function      | The listener function
 scope          | Object        | Optional; scope that will be `this` inside the listener function
 ```javascript
 var scope = {
@@ -93,7 +94,7 @@ Throws `TypeError` if `listener` was already previously added.
 
 Param          | Type          | Description
 ---------------|---------------|---------------------------------------------------
-listener       | Function      | The listener function  
+listener       | Function      | The listener function
 once           | boolean       | Optional; if `true`, listener will be removed after one call
 ```javascript
 object.saved.addListener(function(){}, true);
@@ -187,9 +188,9 @@ are preferred over :
 - foo.end
 
 ## Browser Support
-- Chrome 
-- Firefox 
-- IE 9+ 
+- Chrome
+- Firefox
+- IE 9+
 - IE 8 with [es5-shim](https://github.com/es-shims/es5-shim)
 - Safari
 
