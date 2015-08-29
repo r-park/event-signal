@@ -1,4 +1,4 @@
-describe("Removing listeners", function(){
+describe('Removing listeners', function(){
 
   var eventSignal;
 
@@ -8,7 +8,7 @@ describe("Removing listeners", function(){
   });
 
 
-  it("should remove the listener", function(){
+  it('should remove the listener', function(){
     var listenerFn = function(){};
 
     eventSignal.addListener(listenerFn);
@@ -21,7 +21,7 @@ describe("Removing listeners", function(){
   });
 
 
-  it("should do nothing if provided listener is not found", function(){
+  it('should do nothing if provided listener is not found', function(){
     eventSignal.addListener(function(){});
 
     expect(eventSignal.listenerCount()).toBe(1);
@@ -32,7 +32,7 @@ describe("Removing listeners", function(){
   });
 
 
-  it("should remove all listeners", function(){
+  it('should remove all listeners', function(){
     eventSignal.addListener(function(){});
     eventSignal.addListener(function(){});
 

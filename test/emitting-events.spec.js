@@ -1,4 +1,4 @@
-describe("Emitting events", function(){
+describe('Emitting events', function(){
 
   var eventSignal;
 
@@ -8,7 +8,7 @@ describe("Emitting events", function(){
   });
 
 
-  it("should return self", function(){
+  it('should return self', function(){
     expect(eventSignal.emit()).toBe(eventSignal);
 
     eventSignal.addListener(function(){});
@@ -18,7 +18,7 @@ describe("Emitting events", function(){
   });
 
 
-  it("should invoke listeners in FIFO order", function(){
+  it('should invoke listeners in FIFO order', function(){
     var result = '';
     var listener1 = function() { result += '1'; };
     var listener2 = function() { result += '2'; };
@@ -34,7 +34,7 @@ describe("Emitting events", function(){
   });
 
 
-  it("should invoke the listener within provided scope", function(){
+  it('should invoke the listener within provided scope', function(){
     var object = {
       name: 'foo',
       listener: function() {
@@ -49,7 +49,7 @@ describe("Emitting events", function(){
   });
 
 
-  it("should invoke the listener using anonymous scope when `scope` is not provided", function(){
+  it('should invoke the listener using anonymous scope when `scope` is not provided', function(){
     var object = {
       name: 'foo',
       listener: function() {
@@ -64,7 +64,7 @@ describe("Emitting events", function(){
   });
 
 
-  it("should pass provided data", function(){
+  it('should pass provided data', function(){
     var listener = jasmine.createSpy('listener'),
         data = {foo: 'bar'};
 
@@ -76,8 +76,8 @@ describe("Emitting events", function(){
 
 
 
-  describe("Emitting an event to a single-iteration listener", function(){
-    it("should invoke the listener callback one time", function(){
+  describe('Emitting an event to a single-iteration listener', function(){
+    it('should invoke the listener callback one time', function(){
       var listener = jasmine.createSpy('listener');
 
       eventSignal.addListener(listener, true);
@@ -88,7 +88,7 @@ describe("Emitting events", function(){
     });
 
 
-    it("should automatically remove the listener after one invocation", function(){
+    it('should automatically remove the listener after one invocation', function(){
       eventSignal.addListener(function(){}, true);
 
       expect(eventSignal.listenerCount()).toBe(1);
@@ -99,7 +99,7 @@ describe("Emitting events", function(){
     });
 
 
-    it("should continue emitting to remaining listeners after single-iteration listeners are removed", function(){
+    it('should continue emitting to remaining listeners after single-iteration listeners are removed', function(){
       var result = '';
       var listener1 = function() { result += '1'; };
       var listener2 = function() { result += '2'; };

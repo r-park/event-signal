@@ -1,4 +1,4 @@
-describe("Adding listeners", function(){
+describe('Adding listeners', function(){
 
   var eventSignal;
 
@@ -8,13 +8,13 @@ describe("Adding listeners", function(){
   });
 
 
-  it("should add the provided listener", function(){
+  it('should add the provided listener', function(){
     eventSignal.addListener(function(){});
     expect(eventSignal.listenerCount()).toBe(1);
   });
 
 
-  it("should assign an anonymous object to `scope` when `scope` is not provided", function(){
+  it('should assign an anonymous object to `scope` when `scope` is not provided', function(){
     eventSignal.addListener(function(){});
 
     var listener = eventSignal.listeners()[0];
@@ -23,7 +23,7 @@ describe("Adding listeners", function(){
   });
 
 
-  it("should set `scope` and `once` when called with addListener(listenerFn, scope)", function(){
+  it('should set `scope` and `once` when called with addListener(listenerFn, scope)', function(){
     var object = {
       listenerFn: function(){}
     };
@@ -38,7 +38,7 @@ describe("Adding listeners", function(){
   });
 
 
-  it("should set `scope` and `once` when called with addListener(listenerFn, once)", function(){
+  it('should set `scope` and `once` when called with addListener(listenerFn, once)', function(){
     var object = {
       listenerFn: function(){}
     };
@@ -53,7 +53,7 @@ describe("Adding listeners", function(){
   });
 
 
-  it("should set `scope` and `once` when called with addListener(listenerFn, scope, once)", function(){
+  it('should set `scope` and `once` when called with addListener(listenerFn, scope, once)', function(){
     var object = {
       listenerFn: function(){}
     };
@@ -68,7 +68,7 @@ describe("Adding listeners", function(){
   });
 
 
-  it("should throw if listener is not a function", function(){
+  it('should throw if listener is not a function', function(){
     [{}, [], null, void 0, '', 1, true].forEach(function(listener){
       expect(function(){
         eventSignal.addListener(listener);
@@ -77,7 +77,7 @@ describe("Adding listeners", function(){
   });
 
 
-  it("should throw if listener is already registered", function(){
+  it('should throw if listener is already registered', function(){
     var listenerFn = function(){};
 
     eventSignal.addListener(listenerFn);
