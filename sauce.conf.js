@@ -5,6 +5,12 @@ exports.customLaunchers = {
     version: '42'
   },
 
+  'SL_EDGE': {
+    base: 'SauceLabs',
+    browserName: 'microsoftedge',
+    platform: 'Windows 10'
+  },
+
   'SL_FIREFOX_38': {
     base: 'SauceLabs',
     browserName: 'firefox',
